@@ -31,6 +31,10 @@ RandomArray - Movable Type プラグイン
 
 ランダムに取り出す要素の数を指定します。初期値は1です。
 
+#### destructive (オプション)
+
+destructiveは破壊的なモディファイアです。nameに指定した元の配列もランダムに要素を抜き取った配列に変更されます。
+
 ### サンプルコード
 
     <mt:Entries tag="foo" limit="20">

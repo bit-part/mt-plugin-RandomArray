@@ -31,6 +31,10 @@ The name of the array.
 
 Specifies how many items should be picked. Default is 1.
 
+#### destructive (optional)
+
+This attribute is destructive. The original array is altered.
+
 ### Basic Example
 
     <mt:Entries tag="foo" limit="20">
