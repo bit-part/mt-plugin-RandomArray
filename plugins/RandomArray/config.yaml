@@ -1,0 +1,17 @@
+# RandomArray
+#
+# Release 1.0.0 (2014-02-25)
+#
+# Copyright (c) bit part LLC http://bit-part.net/
+name: RandomArray
+id: RandomArray
+author_name: '<__trans phrase="bit part LLC">'
+author_link: http://bit-part.net/
+description: '<__trans phrase="Pick one or more random items out of an array.">'
+plugin_link: https://github.com/bit-part/mt-plugin-RandomArray
+doc_link: https://github.com/bit-part/mt-plugin-RandomArray/blob/master/README.md
+version: 1.0.0
+l10n_class: RandomArray::L10N
+tags:
+    function:
+        RandomArray: $RandomArray::RandomArray::Tags::_hdlr_randomarray

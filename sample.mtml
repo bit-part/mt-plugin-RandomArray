@@ -1,0 +1,72 @@
+<mt:SetVar name="use_dynamic" value="1">
+
+<h1>Normal</h1>
+
+<mt:Entries limit="10">
+    <mt:SetVarBlock name="entry_ids" function="push"><mt:EntryID></mt:SetVarBlock>
+    <mt:EntriesHeader>
+    <ul>
+    </mt:EntriesHeader>
+        <li><mt:EntryID> : <mt:EntryTitle escape="html"></li>
+    <mt:EntriesFooter>
+    </ul>
+    </mt:EntriesFooter>
+</mt:Entries>
+
+<mt:Ignore>For static</mt:Ignore>
+<mt:SetVarTemplate name="random_entries">
+<mt:Entries id="$random_ids">
+    <mt:EntriesHeader>
+    <ul>
+    </mt:EntriesHeader>
+        <li><mt:EntryID> : <mt:EntryTitle escape="html"></li>
+    <mt:EntriesFooter>
+    </ul>
+    </mt:EntriesFooter>
+</mt:Entries>
+</mt:SetVarTemplate>
+
+<mt:Ignore>For dynamic</mt:Ignore>
+<mt:SetVarTemplate name="random_entries_dynamic">
+<mt:Loop name="random_ids">
+<mt:If name="__first__">
+<ul>
+</mt:If>
+<mt:Entries id="$__value__">
+    <li><mt:EntryID> : <mt:EntryTitle escape="html"></li>
+</mt:Entries>
+<mt:If name="__last__">
+</ul>
+</mt:If>
+</mt:Loop>
+
+</mt:SetVarTemplate>
+
+<h2>1. entry_ids: <mt:Loop name="entry_ids" glue=","><mt:Var name="__value__"></mt:Loop></h2>
+
+<pre><code>&lt;mt:RandomArray name=&quot;entry_ids&quot; limit=&quot;3&quot; setvar=&quot;random_ids&quot;&gt;</code></pre>
+<mt:RandomArray name="entry_ids" limit="3" setvar="random_ids">
+
+<h2>2. random_ids: <mt:Loop name="random_ids" glue=","><mt:Var name="__value__"></mt:Loop></h2>
+<h2>3. entry_ids: <mt:Loop name="entry_ids" glue=","><mt:Var name="__value__"></mt:Loop></h2>
+
+<mt:Unless name="use_dynamic">
+    <mt:Var name="random_entries">
+<mt:Else>
+    <mt:Var name="random_entries_dynamic">
+</mt:Unless>
+
+<hr>
+<h1>destructive="1"</h1>
+
+<pre><code>&lt;mt:RandomArray name=&quot;entry_ids&quot; limit=&quot;3&quot; <strong>destructive=&quot;1&quot;</strong> setvar=&quot;random_ids&quot;&gt;</code></pre>
+<mt:RandomArray name="entry_ids" limit="3" destructive="1" setvar="random_ids">
+
+<h2>2. random_ids: <mt:Loop name="random_ids" glue=","><mt:Var name="__value__"></mt:Loop></h2>
+<h2>4. entry_ids: <mt:Loop name="entry_ids" glue=","><mt:Var name="__value__"></mt:Loop></h2>
+
+<mt:Unless name="use_dynamic">
+    <mt:Var name="random_entries">
+<mt:Else>
+    <mt:Var name="random_entries_dynamic">
+</mt:Unless>
