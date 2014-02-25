@@ -10,7 +10,7 @@ RandomArray - Movable Type プラグイン
 ## 動作条件
 
 * Movable Type 6.0 以上 (確認済み)
-* おそらくMovable Type 4 と 5 でも動きます。
+* Movable Type 5（たぶん動きます）
 
 ## インストール方法
 

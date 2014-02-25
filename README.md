@@ -10,7 +10,7 @@ Pick one or more random items out of an array.
 ## Prerequisites
 
 * Movable Type 6.0 or higher (I confirmed it.)
-* Maybe Movable Type 4 or 5
+* Movable Type 5 (Maybe)
 
 ## Installation
 
