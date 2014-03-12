@@ -10,6 +10,7 @@ use vars qw ( %Lexicon );
 
     # Tags.pm
     'You used an [_1] tag without a valid name attribute.' => '[_1]タグではname属性は必須です。',
+    'You need to set an array to name attribute.' => 'name属性には配列の変数名を指定しなければなりません。',
 );
 
 1;

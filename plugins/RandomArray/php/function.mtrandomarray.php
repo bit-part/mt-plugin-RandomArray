@@ -7,6 +7,9 @@ function smarty_function_mtrandomarray ($args, &$ctx) {
     }
 
     $array_org = $vars[$var_name];
+    if (! is_array($array_org)) {
+        return $ctx->error('You need to set an array to name attribute.');
+    }
     $array_clone = $array_org;
     $rand_array = array();
     $length = count($array_clone);

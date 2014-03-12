@@ -10,6 +10,9 @@ sub _hdlr_randomarray {
         or return $ctx->error(MT->translate('You used an [_1] tag without a valid name attribute.', 'RandomArray'));
 
     my $array_org = $vars->{$var_name};
+    if (ref $array_org ne 'ARRAY') {
+        return $ctx->error(MT->translate('You need to set an array to name attribute.'));
+    }
     my @array_clone = @$array_org;
     my @rand_array;
 
